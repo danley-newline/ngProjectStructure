@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.my-app-min-100vh {
+    min-height: 100vh;
+}
+.my-app-container{
+    padding: 40px;
+}
+
+.my-app-full-container{
+    padding: 0;
+}
+
+
+a{
+    color: #fff;
+    &:hover{
+        color: orange;
+    }
+}
