@@ -1,0 +1,24 @@
+<div class="header">
+    <div class="header_navlink">
+
+        <ul>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a routerLink="/" >Accueil</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/login">login</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/register">register</a>
+              </li>
+        </ul>
+
+        
+
+    </div>
+    <div class="header_logout">
+        <button nz-button nzType="primary" [nzSize]="'large'">Logout
+        </button>
+    </div>
+
+</div>

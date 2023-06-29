@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: black;
+    .header_navlink{
+
+    
+    ul {
+        list-style-type: none;
+        display: flex;
+        gap: 30px;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+      li.active{
+        a {
+            color: orange;
+        }
+      }
+
+    }
+
+}
