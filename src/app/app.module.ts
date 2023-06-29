@@ -6,6 +6,10 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './services/api.service';
+import { MessageService } from 'primeng/api';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -17,9 +21,14 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    AuthGuard,
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
