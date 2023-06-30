@@ -10,19 +10,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './services/api.service';
 import { MessageService } from 'primeng/api';
 import { AuthGuard } from './guard/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NzButtonModule,
     NzIconModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     ApiService,

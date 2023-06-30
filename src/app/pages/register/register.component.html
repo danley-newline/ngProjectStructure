@@ -1,1 +1,47 @@
-<p>register works!</p>
+
+
+<div class="auth_session">
+    <div class="auth_session_content register-form-height">
+      <form [formGroup]="registerForm" novalidate>
+        <h2>Signup</h2>
+
+        <div class="inputBox">
+          <input type="file" formControlName="userImg"  required/>
+          <span>Image</span>
+          <i></i>
+        </div>
+
+        <div class="inputBox">
+          <input type="text" formControlName="username"  required/>
+          <span>Username</span>
+          <i></i>
+        </div>
+
+        <div class="inputBox">
+            <input type="email" formControlName="email"  required/>
+            <span>Email</span>
+            <i></i>
+          </div>
+  
+        <div class="inputBox">
+          <input type="password" formControlName="password" required />
+          <span>Password</span>
+          <i></i>
+        </div>
+  
+        <div class="links">
+          <a href="#">Forgot password</a>
+          <a routerLink="/login">Sign In</a>
+        </div>
+  
+        <button
+          class="auth-btn"
+          [disabled]="!registerForm.valid"
+          (click)="submitRegister()"
+        >
+          soumettre
+        </button>
+      </form>
+    </div>
+  </div>
+  

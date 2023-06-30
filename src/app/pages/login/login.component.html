@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="auth_session">
+  <div class="auth_session_content login-form-height">
+    <form [formGroup]="userForm" novalidate>
+      <h2>Sign In</h2>
+      <div class="inputBox">
+        <input type="text" formControlName="username"  required/>
+        <span>Username</span>
+        <i></i>
+      </div>
+
+      <div class="inputBox">
+        <input type="password" formControlName="password" required />
+        <span>Password</span>
+        <i></i>
+      </div>
+
+      <div class="links">
+        <a href="#">Forgot password</a>
+        <a routerLink="/register">Signup</a>
+      </div>
+
+      <button
+        class="auth-btn"
+        [disabled]="!userForm.valid"
+        (click)="submitLogin()"
+      >
+        soumettre
+      </button>
+    </form>
+  </div>
+</div>
