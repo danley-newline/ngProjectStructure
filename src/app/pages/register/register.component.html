@@ -6,7 +6,7 @@
         <h2>Signup</h2>
 
         <div class="inputBox">
-          <input type="file" formControlName="userImg"  required/>
+          <input type="file" (change)="onFileChange($event)" />
           <span>Image</span>
           <i></i>
         </div>

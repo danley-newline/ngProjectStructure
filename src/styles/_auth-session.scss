@@ -125,32 +125,35 @@
         
     }
 
-    &_content::before{
-        &.login-form-height{
+    &_content{
+        &.login-form-height::before, &.login-form-height::after{
             height: 420px;
         }
-        &.register-form-height{
+        &.register-form-height::before, &.register-form-height::after{
             height: 600px;
         }
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 380px;
-        background: linear-gradient(0deg, transparent,
-         transparent, #45f3ff,#45f3ff, #45f3ff) ;
-        z-index: 1;
-        transform-origin: bottom right;
-        animation: animate 6s linear infinite;
     }
 
-    &_content::after{
-        &.login-form-height{
-            height: 420px;
+    &_content {
+        &.login-form-height::before,&.register-form-height::before{
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 380px;
+            background: linear-gradient(0deg, transparent,
+            transparent, #45f3ff,#45f3ff, #45f3ff) ;
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
         }
-        &.register-form-height{
-            height: 600px;
-        }
+    }
+        
+        
+    
+
+    &_content{
+        &.login-form-height::after,&.register-form-height::after{
         content: "";
         position: absolute;
         top: -50%;
@@ -162,6 +165,7 @@
         transform-origin: bottom right;
         animation: animate 6s linear infinite;
         animation-delay: -3s;
+        }
 
     }
 

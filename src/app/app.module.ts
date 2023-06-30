@@ -29,7 +29,7 @@ import { RegisterComponent } from './pages/register/register.component';
     NzIconModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    
   ],
   providers: [
     ApiService,

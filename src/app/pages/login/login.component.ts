@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { IUser } from 'src/app/models/IUser';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private apiService: ApiService, 
     private router: Router,
     private formBuilder: FormBuilder,
+    private messageService: MessageService
     ) { 
     sessionStorage.clear();
 
@@ -36,12 +38,28 @@ export class LoginComponent implements OnInit {
 
   submitLogin() {
     console.log("ok");
-    return;
-    
-    if (this.userForm.valid) {
-      const user: IUser = this.userForm.value;
-      // Utilisez l'objet 'user' pour effectuer des opérations supplémentaires (par exemple, envoyer une requête HTTP, etc.)
-    }
+    this.apiService.post('/auth/login', this.userForm.value).subscribe(
+      (response) => {
+
+        console.log(response);
+
+
+        sessionStorage.setItem('access_token', response.token);
+        sessionStorage.setItem('logged_user', JSON.stringify(response));
+
+        
+        this.messageService.add({
+          severity: 'success',
+          detail: 'Connexion effectué',
+        });
+        this.userForm.reset()
+        this.router.navigate(['/']);
+      },
+      (error) => {
+        console.log(error);
+
+      }
+    );
   }
 
 
